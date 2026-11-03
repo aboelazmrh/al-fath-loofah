@@ -27,6 +27,7 @@
   let activeCountry = null;
   let activeModal = null;
   let modalOpener = null;
+  let galleryItems = [];
   let carouselController = null;
   const word = (ar, en) => language === 'ar' ? ar : en;
   function translatedText(element, ar, en) {
@@ -85,15 +86,25 @@
   desktop.addEventListener('change', event => { if (event.matches) closeMenu(); });
 
   // Product filters preserve the same accessible card and enquiry links.
-  $$('.filter-button').forEach(button => button.addEventListener('click', () => {
+  $$('[data-filter]').forEach(button => button.addEventListener('click', () => {
     const filter = button.dataset.filter;
-    $$('.filter-button').forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+    $$('[data-filter]').forEach(b => b.setAttribute('aria-pressed', String(b === button)));
     let count = 0;
     $$('.catalog-grid .product').forEach(card => {
       card.hidden = filter !== 'all' && card.dataset.category !== filter;
       if (!card.hidden) count++;
     });
     if ($('.empty-state')) $('.empty-state').hidden = count > 0;
+  }));
+  $$('[data-gallery-filter]').forEach(button => button.addEventListener('click', () => {
+    const filter = button.dataset.galleryFilter;
+    $$('[data-gallery-filter]').forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+    let count = 0;
+    $$('[data-gallery-category]').forEach(card => {
+      card.hidden = filter !== 'all' && card.dataset.galleryCategory !== filter;
+      if (!card.hidden) count++;
+    });
+    $('[data-gallery-count]').textContent = count;
   }));
   function updateRegion(region, countryId = null) {
     activeRegion = region;
@@ -127,14 +138,18 @@
     dialog.classList.toggle('gallery-modal', gallery);
     enquiry.hidden = gallery;
     kicker.hidden = gallery;
+    $$('[data-gallery-prev], [data-gallery-next], [data-gallery-counter]', dialog).forEach(el => {
+      el.hidden = !gallery || galleryItems.length < 2;
+    });
     if (gallery) {
       image.src = activeModal.source;
       image.alt = word(activeModal.ar, activeModal.en);
       title.textContent = word(activeModal.ar, activeModal.en);
-      description.textContent = word('رحلة اللوف من الزراعة إلى المنتج النهائي.', 'The loofah journey from field to finished product.');
+      description.textContent = word(activeModal.detailAr || 'رحلة اللوف من الزراعة إلى المنتج النهائي.', activeModal.detailEn || 'The loofah journey from field to finished product.');
+      $('[data-gallery-counter]', dialog).textContent = String(galleryItems.findIndex(item => item.source === activeModal.source) + 1) + ' / ' + galleryItems.length;
     } else {
       const p = activeModal.product;
-      image.src = 'assets/loofah-collection.webp';
+      image.src = 'assets/' + p.image;
       image.alt = word(p.ar, p.en);
       title.textContent = word(p.ar, p.en);
       description.textContent = word(p.detail_ar, p.detail_en);
@@ -150,13 +165,32 @@
     document.body.style.overflow = 'hidden';
   }
   function closeModal() { dialog.close(); }
+  function galleryData(button) {
+    return { type: 'gallery', source: button.dataset.gallerySrc, ar: button.dataset.titleAr, en: button.dataset.titleEn,
+      detailAr: button.dataset.descriptionAr, detailEn: button.dataset.descriptionEn };
+  }
+  function moveGallery(step) {
+    if (activeModal?.type !== 'gallery' || galleryItems.length < 2) return;
+    const current = galleryItems.findIndex(item => item.source === activeModal.source);
+    activeModal = galleryItems[(current + step + galleryItems.length) % galleryItems.length];
+    renderModal();
+  }
+  $('[data-gallery-prev]', dialog).addEventListener('click', () => moveGallery(-1));
+  $('[data-gallery-next]', dialog).addEventListener('click', () => moveGallery(1));
+  dialog.addEventListener('keydown', event => {
+    if (!['ArrowLeft', 'ArrowRight'].includes(event.key) || activeModal?.type !== 'gallery') return;
+    event.preventDefault();
+    const forward = event.key === (language === 'ar' ? 'ArrowLeft' : 'ArrowRight');
+    moveGallery(forward ? 1 : -1);
+  });
   $$('[data-product]').forEach(button => button.addEventListener('click', () => {
     const product = products.find(p => p.id === button.dataset.product);
     if (product) openModal({ type: 'product', product }, button);
   }));
-  $$('[data-gallery-src]').forEach(button => button.addEventListener('click', () => openModal({
-    type: 'gallery', source: button.dataset.gallerySrc, ar: button.dataset.titleAr, en: button.dataset.titleEn
-  }, button)));
+  $$('[data-gallery-src]').forEach(button => button.addEventListener('click', () => {
+    galleryItems = $$('[data-gallery-src]').filter(item => !item.hidden).map(galleryData);
+    openModal(galleryData(button), button);
+  }));
   $('.modal-close', dialog).addEventListener('click', closeModal);
   dialog.addEventListener('click', event => {
     if (event.target === dialog) {

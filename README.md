@@ -4,6 +4,10 @@
 
 A responsive bilingual website for Al Fath Egyptian natural loofah.
 
+[View the website](https://aboelazmrh.github.io/al-fath-loofah/)
+
+The gallery includes 20 factory photographs, with production-stage filters and a full-size viewer.
+
 ## Files
 
 - index.html — Home / الرئيسية

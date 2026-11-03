@@ -126,3 +126,34 @@ h1{line-height:1.45}h2{line-height:1.5}h3{line-height:1.6;font-weight:700}
 @media(max-width:800px){.carousel-stage{height:390px;border-radius:95px 0 0 0}.hero-carousel{max-width:660px}.carousel-caption{padding-inline:24px}.carousel-caption strong{font-size:22px}}
 @media(max-width:480px){.carousel-stage{height:315px;border-radius:75px 0 0 0}.hero-carousel:before{inset:14px 14px 45px 0}.carousel-arrow{width:36px;height:36px}.carousel-prev{inset-inline-start:10px}.carousel-next{inset-inline-end:10px}.carousel-caption{padding:80px 19px 20px}.carousel-caption strong{font-size:20px}.carousel-caption>span{font-size:12px}.carousel-toolbar{grid-template-columns:45px 1fr 32px;gap:10px}.carousel-dots{gap:4px}.carousel-counter{font-size:12px}.carousel-counter b{font-size:16px}}
 @media(max-width:360px){.carousel-stage{height:280px}.carousel-caption strong{font-size:18px}.carousel-caption>span{font-size:11px}.carousel-arrow{width:33px;height:33px}.carousel-dot{width:22px}}
+
+/* Factory photographs keep their full original framing. */
+.hero-carousel .carousel-stage{height:auto;aspect-ratio:4/3}
+.hero-carousel .carousel-slide>img{object-fit:contain;object-position:center}
+.carousel-caption{padding-top:45px;background:linear-gradient(180deg,transparent 58%,#0b2419ad 84%,#0b2419e8)}
+.product-image.factory-product{aspect-ratio:4/3}
+.product-image.factory-product img{transform:none;object-position:center}
+.product-image.factory-product:hover img{transform:scale(1.025)}
+.gallery-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:32px 24px;align-items:start}
+.gallery-card{width:100%;min-width:0;display:block}
+.gallery-card[hidden]{display:none}
+.gallery-image-wrap{display:block;position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--sand);border-radius:3px}
+.gallery-image-wrap img{width:100%;height:100%;object-fit:contain}
+.gallery-zoom{position:absolute;bottom:12px;inset-inline-end:12px;width:29px;height:29px;display:grid;place-items:center;background:var(--cream);color:var(--green);border-radius:50%;font-size:20px}
+.gallery-caption{line-height:1.55;padding-top:14px}.gallery-caption small{line-height:1.75;margin-top:4px}
+.gallery-filters{margin-bottom:12px;gap:8px;flex-wrap:wrap}
+.gallery-filters .filter-button{font-size:14px;padding:8px 17px}
+.gallery-result{font-size:13px;color:var(--muted);margin:0 0 30px}
+.modal-media{position:relative;min-width:0;background:var(--sand)}
+.modal.gallery-modal{max-width:1120px;max-height:94vh}
+.modal.gallery-modal .modal-image{display:block;width:100%;height:auto;min-height:0;max-height:73vh;object-fit:contain}
+.modal.gallery-modal .modal-copy{padding:18px 27px 21px}
+.gallery-modal-arrow{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;display:grid;place-items:center;padding:0;border:1px solid #163d3026;border-radius:50%;background:#fffdf5ed;color:var(--green);z-index:2}
+.gallery-modal-prev{inset-inline-start:12px}.gallery-modal-next{inset-inline-end:12px}
+.gallery-modal-prev .icon{transform:rotate(180deg)}
+[dir=ltr] .gallery-modal-prev .icon{transform:none}[dir=ltr] .gallery-modal-next .icon{transform:rotate(180deg)}
+.gallery-modal-counter{position:absolute;bottom:13px;inset-inline-start:50%;transform:translateX(50%);direction:ltr;white-space:nowrap;background:#163d30dc;color:white;border-radius:20px;padding:3px 13px;font-size:13px}
+[dir=ltr] .gallery-modal-counter{transform:translateX(-50%)}
+.gallery-modal-arrow[hidden],.gallery-modal-counter[hidden]{display:none}
+@media(max-width:1000px){.gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.gallery-grid{grid-template-columns:1fr;gap:28px}.gallery-filters .filter-button{font-size:12px;padding:6px 13px}.gallery-result{margin-bottom:23px}.gallery-caption{font-size:15px}.gallery-caption small{font-size:12px}.carousel-caption{padding-bottom:16px}.carousel-caption strong{font-size:18px}.carousel-caption>span{font-size:11px}.modal.gallery-modal{width:calc(100% - 20px)}.modal.gallery-modal .modal-copy{padding:17px 20px}.modal.gallery-modal .modal-copy h2{font-size:21px}.gallery-modal-arrow{width:34px;height:34px}.gallery-modal-prev{inset-inline-start:8px}.gallery-modal-next{inset-inline-end:8px}}
