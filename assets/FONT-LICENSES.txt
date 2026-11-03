@@ -1,0 +1,3 @@
+Tajawal: SIL Open Font License 1.1 — see TAJAWAL-OFL.txt.
+Lalezar: SIL Open Font License 1.1 — see LALEZAR-OFL.txt.
+Official distribution: https://github.com/google/fonts

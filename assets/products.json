@@ -1,0 +1,54 @@
+[
+  {
+    "id": "raw",
+    "ar": "اللوف الطبيعي الخام",
+    "en": "Natural raw loofah",
+    "cat": "raw",
+    "label_ar": "الخامة الأصلية",
+    "label_en": "THE ORIGINAL FIBRE",
+    "desc_ar": "ألياف اللوف المصري في شكلها الطبيعي.",
+    "desc_en": "Egyptian plant fibres in their natural form.",
+    "detail_ar": "خامة نباتية ذات ملمس مميز. اسأل فريقنا عن الأطوال ودرجات الخامة المتاحة لاحتياجك.",
+    "detail_en": "A distinctive plant-based fibre. Ask our team about available lengths and grades for your requirements.",
+    "crop": "crop-raw"
+  },
+  {
+    "id": "pad",
+    "ar": "لوف الجسم",
+    "en": "Body loofah pads",
+    "cat": "body",
+    "label_ar": "عناية من الطبيعة",
+    "label_en": "NATURALLY SIMPLE",
+    "desc_ar": "أشكال عملية بروح طبيعية.",
+    "desc_en": "Practical shapes with a natural feel.",
+    "detail_ar": "نماذج لوف للجسم بتشطيبات وأشكال متنوعة. تواصل معنا لتأكيد الموديل والمقاس والخامة النهائية.",
+    "detail_en": "Body loofah options in a variety of shapes and finishes. Contact us to confirm the model, size and final materials.",
+    "crop": "crop-pad"
+  },
+  {
+    "id": "strap",
+    "ar": "لوف الظهر",
+    "en": "Back loofah straps",
+    "cat": "body",
+    "label_ar": "تفاصيل تصنع الفرق",
+    "label_en": "THOUGHTFUL DETAILS",
+    "desc_ar": "تصميم طولي لسهولة الاستخدام.",
+    "desc_en": "An elongated shape for easy use.",
+    "detail_ar": "تصاميم طولية من اللوف الطبيعي. اسأل عن المقاسات وخيارات التشطيب المتاحة لطلبات الجملة.",
+    "detail_en": "Elongated natural loofah designs. Ask about available sizes and finishing options for wholesale orders.",
+    "crop": "crop-strap"
+  },
+  {
+    "id": "mitt",
+    "ar": "قفازات اللوف",
+    "en": "Loofah mitts",
+    "cat": "mitts",
+    "label_ar": "ملمس مصري أصيل",
+    "label_en": "EGYPTIAN BY NATURE",
+    "desc_ar": "اللوف الطبيعي في تصميم قفاز.",
+    "desc_en": "Natural loofah in a mitt design.",
+    "detail_ar": "تصميم قفاز بخامات وتشطيبات متعددة. نؤكد معك اللون والموديل المتاحين عند تجهيز الطلب.",
+    "detail_en": "A mitt design with a choice of finishes. We confirm available colours and models with you when preparing your order.",
+    "crop": "crop-mitt"
+  }
+]
