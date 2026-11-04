@@ -167,7 +167,10 @@ h1{line-height:1.45}h2{line-height:1.5}h3{line-height:1.6;font-weight:700}
 .family-subtitle:after{content:"";display:block;width:40px;height:1px;background:var(--gold);margin:15px auto 0}
 .family-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:28px 20px;align-items:flex-start}
 .family-member{margin:0;min-width:0;flex:0 1 calc((100% - 80px)/5)}
-.family-member img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:4px;background:#e9e6df}
+.family-portrait{overflow:hidden;isolation:isolate;border-radius:4px;background:#e9e6df;animation:family-portrait-fade .85s ease-out both;animation-delay:var(--portrait-delay,0ms)}
+.family-member img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;background:#e9e6df;transition:transform 1.1s cubic-bezier(.2,.65,.3,1);transform-origin:center 38%}
+@keyframes family-portrait-fade{from{opacity:0}to{opacity:1}}
+@media(hover:hover) and (pointer:fine){.family-member:hover .family-portrait img{transform:scale(1.025)}}
 .family-member figcaption{text-align:center;padding:14px 4px 0}
 .family-member h2{font-family:Lalezar,Tajawal,sans-serif;font-size:26px;font-weight:400;line-height:1.5;margin:0;color:var(--green)}
 [dir=ltr] .family-heading h1{font-family:Tajawal,Arial,sans-serif;font-size:clamp(29px,3.1vw,42px);font-weight:800;line-height:1.35}
