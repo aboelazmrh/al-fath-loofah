@@ -1,28 +1,17 @@
-# Al Fath | Silk Loofah
+# Al Fath Factory — مصنع الفتح
 
-موقع مصنع الفتح للوف المصري، بالعربية والإنجليزية.
+Egyptian natural loofah manufacture and export.
 
-A responsive bilingual website for Al Fath Egyptian natural loofah.
+Live website: https://aboelazmrh.github.io/al-fath-loofah/
 
-[View the website](https://aboelazmrh.github.io/al-fath-loofah/)
+English is the default language. Arabic pages are available under `ar/`. The site includes Home, Products, Gallery, About and Contact, with static language links and responsive layouts.
 
-The gallery includes 20 factory photographs, with production-stage filters and a full-size viewer.
+This repository contains the ready-to-publish HTML, CSS, JavaScript, photographs and locally hosted fonts. No build step is required. Publish the repository root with GitHub Pages.
 
-## Files
+Features include an automatic photo carousel, product filters and details, a factory gallery, export routes, family portraits, Google Maps location links, social sharing metadata, reciprocal hreflang, a sitemap and custom 404 pages.
 
-- index.html — Home / الرئيسية
-- products.html — Products / المنتجات
-- gallery.html — Gallery / معرض الصور
-- about.html — About / من نحن
-- contact.html — Contact / اتصل بنا
-- assets/ — CSS, JavaScript, images and local fonts
+Contact forms prepare a WhatsApp enquiry for the visitor to review and send. They do not send email or store messages.
 
-## GitHub Pages
+Factory location: https://maps.app.goo.gl/ctCwqHVp3RDMitoF6
 
-In repository Settings → Pages, select Deploy from a branch, then main and / (root), and save.
-
-No installation or build step is required. All page and asset links are relative, so the website works in a GitHub project Pages path.
-
-The contact form prepares a WhatsApp enquiry for the visitor to review and send.
-
-Font license notices are included in assets/.
+Font licences are included in `assets/`.

@@ -180,3 +180,46 @@ h1{line-height:1.45}h2{line-height:1.5}h3{line-height:1.6;font-weight:700}
 @media(max-width:1000px){.family-parent{width:210px}.family-grid{max-width:800px}.family-heading{max-width:780px}.family-heading h1{font-size:40px}}
 @media(max-width:650px){.family-parent{width:calc((100% - 20px)/2);max-width:220px;margin-bottom:27px}.family-section{padding:29px 0 43px}.family-heading{margin:26px auto 30px}.family-heading h1{font-size:32px;line-height:1.55}.family-subtitle{font-size:22px}.family-member{flex-basis:calc((100% - 20px)/2)}.family-grid{gap:25px 20px}.family-member h2{font-size:24px}.family-member figcaption{padding-top:10px}[dir=ltr] .family-heading h1{font-size:29px}[dir=ltr] .family-member h2{font-size:21px}}
 @media(max-width:360px){.family-parent{width:calc((100% - 14px)/2)}.family-heading h1{font-size:29px}.family-grid{column-gap:14px}.family-member{flex-basis:calc((100% - 14px)/2)}.family-member h2{font-size:23px}[dir=ltr] .family-heading h1{font-size:26px}[dir=ltr] .family-member h2{font-size:19px}}
+
+/* English-first export site, with native Arabic page links. */
+.carousel-slide{visibility:visible;transition:opacity .65s ease}
+.language{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;min-height:36px}
+.brand-sub{letter-spacing:1.5px;font-size:9px}
+[dir=rtl] .brand-sub{letter-spacing:0;font-size:11px}
+.stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+.stat:last-child{border-inline-end:0}
+.catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:1080px;margin-inline:auto}
+.factory-location{display:flex!important;align-items:center;gap:11px;border-top:1px solid #ffffff26;margin-top:8px;padding-top:15px}
+.factory-location>.icon{flex:none;color:var(--gold);width:23px;height:23px}
+.factory-location>span{display:grid;gap:2px}
+.factory-location strong{font-size:14px;font-weight:700}
+.factory-location small{font-size:12px;color:#bfc9bf}
+.factory-location>.arrow{margin-inline-start:auto}
+.contact-location{gap:9px;align-items:center;display:inline-flex;flex-wrap:wrap}
+.contact-location .icon{width:18px;height:18px;flex:none}
+.export-section .country-label{font-size:18px;paint-order:stroke;stroke:var(--green);stroke-width:5px;stroke-linejoin:round}
+[dir=ltr] .export-section .country-label{font-size:14px;letter-spacing:0}
+.export-section .country-leader{stroke:#d4b87899;stroke-width:1.1}
+.not-found{min-height:60vh;display:grid;align-items:center}
+.not-found .eyebrow{font-size:58px;color:var(--gold);margin-bottom:0}
+.not-found h1{margin-bottom:15px}
+.not-found .lead{max-width:630px}
+@media(max-width:800px){
+ .hero{padding-top:22px}.hero-grid{gap:22px}.hero-carousel{grid-row:1;margin:0}.hero-copy{grid-row:2}
+ .carousel-stage{height:300px;border-radius:70px 0 0 0}.hero h1,[dir=ltr] .hero h1{font-size:35px;line-height:1.35;margin-bottom:13px}
+ .hero-copy>p:not(.eyebrow){font-size:15px;line-height:1.75;margin-bottom:21px}.hero .eyebrow{margin-bottom:10px}
+ .floating-whatsapp{width:48px;height:48px;inset-inline-end:14px;bottom:max(14px,env(safe-area-inset-bottom));box-shadow:0 3px 14px #123b3038}
+ .floating-whatsapp .whatsapp-icon{width:27px;height:27px}
+ .carousel-prev{inset-inline-start:62px}.carousel-next{inset-inline-end:62px}
+ [dir=ltr] .brand-name{font-size:22px}.brand-sub{font-size:8px;letter-spacing:.8px}
+}
+@media(max-width:480px){
+ .hero .wrap{width:calc(100% - 36px)}.carousel-stage{height:245px;border-radius:55px 0 0 0}.hero h1,[dir=ltr] .hero h1{font-size:31px;line-height:1.35}
+ .carousel-caption{padding-inline:18px}.carousel-caption strong{font-size:18px}.carousel-caption>span{font-size:12px}
+ .stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:0}.stat strong{font-size:28px}.stat span{font-size:10px;line-height:1.6}.stat:nth-child(2){border-inline-end:1px solid var(--line)}
+ .header-actions{gap:8px}.language{padding:4px 9px}.brand{gap:8px}.brand-mark{width:33px;height:38px}.brand-sub{font-size:7px;letter-spacing:.4px}
+ [dir=ltr] .brand-name{font-size:20px}.header-row{gap:9px}.menu-toggle{padding:6px}
+ .factory-location strong{font-size:13px}.factory-location small{font-size:11px}
+ .catalog-grid .product-image{aspect-ratio:1}.catalog-grid .product h3{font-size:15px}.catalog-grid .product p{font-size:12px}
+}
+@media(max-width:360px){[dir=ltr] .brand-name{font-size:17px}.brand-sub{font-size:6.5px}.brand-mark{width:28px}.language{font-size:11px;padding-inline:7px}.carousel-stage{height:220px}.hero h1,[dir=ltr] .hero h1{font-size:28px}.stat strong{font-size:25px}}

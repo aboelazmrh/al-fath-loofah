@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://aboelazmrh.github.io/al-fath-loofah/sitemap.xml

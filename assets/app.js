@@ -7,12 +7,26 @@
   const products = JSON.parse($('#product-data').textContent);
   const destinations = JSON.parse($('#destination-data')?.textContent || '[]');
   const urlParams = new URLSearchParams(location.search);
-  let storedLanguage = 'ar';
-  try { storedLanguage = localStorage.getItem('al-fath-language') || 'ar'; } catch {}
-  let language = urlParams.get('lang') || storedLanguage;
-  if (!['ar', 'en'].includes(language)) language = 'ar';
-  const arabicTitle = document.title;
-  const originalDescription = $('meta[name="description"]').content;
+  const language = document.documentElement.lang === 'ar' ? 'ar' : 'en';
+  const assetsBase = document.body.dataset.assetsBase || 'assets/';
+  const languageLink = $('.language');
+  const requestedLanguage = urlParams.get('lang');
+  urlParams.delete('lang');
+  if (languageLink) {
+    const counterpart = new URL(languageLink.getAttribute('href'), document.baseURI);
+    counterpart.search = urlParams.toString();
+    counterpart.hash = location.hash;
+    languageLink.href = counterpart.href;
+    if (['ar', 'en'].includes(requestedLanguage) && requestedLanguage !== language) {
+      location.replace(counterpart.href);
+      return;
+    }
+  }
+  if (requestedLanguage) {
+    const clean = new URL(location.href);
+    clean.searchParams.delete('lang');
+    history.replaceState(null, '', clean);
+  }
   const nav = $('#main-nav');
   const menu = $('.menu-toggle');
   const dialog = $('.modal');
@@ -36,38 +50,10 @@
     element.textContent = word(ar, en);
   }
   function applyLanguage() {
-    document.documentElement.lang = language;
-    document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
-    $$('[data-en]').forEach(el => {
-      if (!('ar' in el.dataset)) el.dataset.ar = el.textContent;
-      el.textContent = el.dataset[language];
-    });
-    [['placeholder', 'enPlaceholder', 'arPlaceholder'], ['aria-label', 'enAria', 'arAria'], ['alt', 'enAlt', 'arAlt']].forEach(([attr, enKey, arKey]) => {
-      $$('[data-' + enKey.replace(/[A-Z]/g, c => '-' + c.toLowerCase()) + ']').forEach(el => {
-        if (!(arKey in el.dataset)) el.dataset[arKey] = el.getAttribute(attr) || '';
-        el.setAttribute(attr, language === 'ar' ? el.dataset[arKey] : el.dataset[enKey]);
-      });
-    });
-    document.title = language === 'ar' ? arabicTitle : document.body.dataset.titleEn;
-    $('meta[name="description"]').content = language === 'ar' ? originalDescription : 'Al Fath Egyptian natural loofah. More than 150 skilled people, over 8,000 pieces daily, and exports to the Gulf and Europe.';
-    const languageButton = $('.language');
-    languageButton.textContent = language === 'ar' ? 'EN' : 'عربي';
-    languageButton.setAttribute('aria-label', word('Switch to English', 'التبديل إلى العربية'));
-    languageButton.setAttribute('lang', language === 'ar' ? 'en' : 'ar');
     if ($('#region-description')) updateRegion(activeRegion, activeCountry);
     if (activeModal) renderModal();
     if (carouselController) carouselController.translate();
-    try { localStorage.setItem('al-fath-language', language); } catch {}
   }
-  $('.language').addEventListener('click', () => {
-    language = language === 'ar' ? 'en' : 'ar';
-    applyLanguage();
-    if (urlParams.has('lang')) {
-      const updated = new URL(location.href);
-      updated.searchParams.set('lang', language);
-      try { history.replaceState(null, '', updated); } catch {}
-    }
-  });
   function closeMenu() {
     nav.classList.remove('open');
     menu.setAttribute('aria-expanded', 'false');
@@ -149,7 +135,7 @@
       $('[data-gallery-counter]', dialog).textContent = String(galleryItems.findIndex(item => item.source === activeModal.source) + 1) + ' / ' + galleryItems.length;
     } else {
       const p = activeModal.product;
-      image.src = 'assets/' + p.image;
+      image.src = assetsBase + p.image;
       image.alt = word(p.ar, p.en);
       title.textContent = word(p.ar, p.en);
       description.textContent = word(p.detail_ar, p.detail_en);
@@ -267,6 +253,16 @@
     let hovered = false;
     let timer = 0;
     let pointerStart = null;
+    function hydrate(slide) {
+      const image = $('img', slide);
+      if (image.dataset.src) {
+        if (image.dataset.srcset) image.srcset = image.dataset.srcset;
+        image.src = image.dataset.src;
+        delete image.dataset.src;
+        delete image.dataset.srcset;
+      }
+      image.loading = 'eager';
+    }
     function translate() {
       root.setAttribute('aria-roledescription', word('عرض شرائح', 'carousel'));
       slides.forEach(slide => slide.setAttribute('aria-roledescription', word('شريحة', 'slide')));
@@ -304,8 +300,8 @@
       dots.forEach((dot, i) => dot.setAttribute('aria-pressed', String(i === current)));
       $('[data-carousel-current]', root).textContent = String(current + 1).padStart(2, '0');
       root.dataset.activeSlide = String(current);
-      $('img', slides[current]).loading = 'eager';
-      $('img', slides[(current + 1) % slides.length]).loading = 'eager';
+      hydrate(slides[current]);
+      hydrate(slides[(current + 1) % slides.length]);
       if (manual) announcement.textContent = word(
         'الصورة ' + (current + 1) + ' من ' + slides.length + ': ' + $('strong', slides[current]).textContent,
         'Image ' + (current + 1) + ' of ' + slides.length + ': ' + $('strong', slides[current]).textContent
