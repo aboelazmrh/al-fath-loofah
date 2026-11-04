@@ -157,3 +157,21 @@ h1{line-height:1.45}h2{line-height:1.5}h3{line-height:1.6;font-weight:700}
 .gallery-modal-arrow[hidden],.gallery-modal-counter[hidden]{display:none}
 @media(max-width:1000px){.gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.gallery-grid{grid-template-columns:1fr;gap:28px}.gallery-filters .filter-button{font-size:12px;padding:6px 13px}.gallery-result{margin-bottom:23px}.gallery-caption{font-size:15px}.gallery-caption small{font-size:12px}.carousel-caption{padding-bottom:16px}.carousel-caption strong{font-size:18px}.carousel-caption>span{font-size:11px}.modal.gallery-modal{width:calc(100% - 20px)}.modal.gallery-modal .modal-copy{padding:17px 20px}.modal.gallery-modal .modal-copy h2{font-size:21px}.gallery-modal-arrow{width:34px;height:34px}.gallery-modal-prev{inset-inline-start:8px}.gallery-modal-next{inset-inline-end:8px}}
+
+
+/* Family portraits at the beginning of About us. */
+.family-section{padding:43px 0 62px;background:var(--cream);border-bottom:1px solid var(--line)}
+.family-heading{text-align:center;max-width:1000px;margin:28px auto 36px}
+.family-heading h1{font-size:clamp(32px,3.6vw,49px);line-height:1.55;margin:0 auto 13px;color:var(--green);max-width:950px}
+.family-subtitle{font-size:24px;font-weight:600;color:var(--sage);margin:0;line-height:1.6}
+.family-subtitle:after{content:"";display:block;width:40px;height:1px;background:var(--gold);margin:15px auto 0}
+.family-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:28px 20px;align-items:flex-start}
+.family-member{margin:0;min-width:0;flex:0 1 calc((100% - 80px)/5)}
+.family-member img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:4px;background:#e9e6df}
+.family-member figcaption{text-align:center;padding:14px 4px 0}
+.family-member h2{font-family:Lalezar,Tajawal,sans-serif;font-size:26px;font-weight:400;line-height:1.5;margin:0;color:var(--green)}
+[dir=ltr] .family-heading h1{font-family:Tajawal,Arial,sans-serif;font-size:clamp(29px,3.1vw,42px);font-weight:800;line-height:1.35}
+[dir=ltr] .family-member h2{font-family:Tajawal,Arial,sans-serif;font-size:23px;font-weight:700}
+@media(max-width:1000px){.family-member{flex-basis:calc((100% - 40px)/3)}.family-grid{max-width:800px;margin:auto}.family-heading{max-width:780px}.family-heading h1{font-size:40px}}
+@media(max-width:650px){.family-section{padding:29px 0 43px}.family-heading{margin:26px auto 30px}.family-heading h1{font-size:32px;line-height:1.55}.family-subtitle{font-size:22px}.family-member{flex-basis:calc((100% - 20px)/2)}.family-grid{gap:25px 20px}.family-member h2{font-size:24px}.family-member figcaption{padding-top:10px}[dir=ltr] .family-heading h1{font-size:29px}[dir=ltr] .family-member h2{font-size:21px}}
+@media(max-width:360px){.family-heading h1{font-size:29px}.family-grid{column-gap:14px}.family-member{flex-basis:calc((100% - 14px)/2)}.family-member h2{font-size:23px}[dir=ltr] .family-heading h1{font-size:26px}[dir=ltr] .family-member h2{font-size:19px}}
