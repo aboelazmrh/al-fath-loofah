@@ -165,8 +165,10 @@ h1{line-height:1.45}h2{line-height:1.5}h3{line-height:1.6;font-weight:700}
 .family-heading h1{font-size:clamp(32px,3.6vw,49px);line-height:1.55;margin:0 auto 13px;color:var(--green);max-width:950px}
 .family-subtitle{font-size:24px;font-weight:600;color:var(--sage);margin:0;line-height:1.6}
 .family-subtitle:after{content:"";display:block;width:40px;height:1px;background:var(--gold);margin:15px auto 0}
-.family-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:28px 20px;align-items:flex-start}
-.family-member{margin:0;min-width:0;flex:0 1 calc((100% - 80px)/5)}
+.family-parent{width:235px;max-width:100%;margin:0 auto 30px}
+.family-parent .family-member{width:100%}
+.family-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:28px 20px;align-items:flex-start;max-width:1000px;margin:auto}
+.family-member{margin:0;min-width:0;flex:0 1 calc((100% - 60px)/4)}
 .family-portrait{overflow:hidden;isolation:isolate;border-radius:4px;background:#e9e6df;animation:family-portrait-fade .85s ease-out both;animation-delay:var(--portrait-delay,0ms)}
 .family-member img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;background:#e9e6df;transition:transform 1.1s cubic-bezier(.2,.65,.3,1);transform-origin:center 38%}
 @keyframes family-portrait-fade{from{opacity:0}to{opacity:1}}
@@ -175,6 +177,6 @@ h1{line-height:1.45}h2{line-height:1.5}h3{line-height:1.6;font-weight:700}
 .family-member h2{font-family:Lalezar,Tajawal,sans-serif;font-size:26px;font-weight:400;line-height:1.5;margin:0;color:var(--green)}
 [dir=ltr] .family-heading h1{font-family:Tajawal,Arial,sans-serif;font-size:clamp(29px,3.1vw,42px);font-weight:800;line-height:1.35}
 [dir=ltr] .family-member h2{font-family:Tajawal,Arial,sans-serif;font-size:23px;font-weight:700}
-@media(max-width:1000px){.family-member{flex-basis:calc((100% - 40px)/3)}.family-grid{max-width:800px;margin:auto}.family-heading{max-width:780px}.family-heading h1{font-size:40px}}
-@media(max-width:650px){.family-section{padding:29px 0 43px}.family-heading{margin:26px auto 30px}.family-heading h1{font-size:32px;line-height:1.55}.family-subtitle{font-size:22px}.family-member{flex-basis:calc((100% - 20px)/2)}.family-grid{gap:25px 20px}.family-member h2{font-size:24px}.family-member figcaption{padding-top:10px}[dir=ltr] .family-heading h1{font-size:29px}[dir=ltr] .family-member h2{font-size:21px}}
-@media(max-width:360px){.family-heading h1{font-size:29px}.family-grid{column-gap:14px}.family-member{flex-basis:calc((100% - 14px)/2)}.family-member h2{font-size:23px}[dir=ltr] .family-heading h1{font-size:26px}[dir=ltr] .family-member h2{font-size:19px}}
+@media(max-width:1000px){.family-parent{width:210px}.family-grid{max-width:800px}.family-heading{max-width:780px}.family-heading h1{font-size:40px}}
+@media(max-width:650px){.family-parent{width:calc((100% - 20px)/2);max-width:220px;margin-bottom:27px}.family-section{padding:29px 0 43px}.family-heading{margin:26px auto 30px}.family-heading h1{font-size:32px;line-height:1.55}.family-subtitle{font-size:22px}.family-member{flex-basis:calc((100% - 20px)/2)}.family-grid{gap:25px 20px}.family-member h2{font-size:24px}.family-member figcaption{padding-top:10px}[dir=ltr] .family-heading h1{font-size:29px}[dir=ltr] .family-member h2{font-size:21px}}
+@media(max-width:360px){.family-parent{width:calc((100% - 14px)/2)}.family-heading h1{font-size:29px}.family-grid{column-gap:14px}.family-member{flex-basis:calc((100% - 14px)/2)}.family-member h2{font-size:23px}[dir=ltr] .family-heading h1{font-size:26px}[dir=ltr] .family-member h2{font-size:19px}}
