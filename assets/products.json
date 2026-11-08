@@ -25,31 +25,6 @@
     ]
   },
   {
-    "id": "102",
-    "cat": "mitts",
-    "ar": "قفاز لوف مقوّس بحافة بيج",
-    "en": "Beige arch-top loofah mitt",
-    "desc_ar": "قفاز استحمام بوجه من اللوف الطبيعي وحواف بيج مخيطة.",
-    "desc_en": "A bath mitt with a natural loofah face and stitched beige edging.",
-    "photos": [
-      {
-        "image": "products/102-1.webp",
-        "ar": "الوجه المصنوع من اللوف الطبيعي",
-        "en": "Natural loofah face"
-      },
-      {
-        "image": "products/102-2.webp",
-        "ar": "الوجه القماشي البيج",
-        "en": "Beige fabric side"
-      },
-      {
-        "image": "products/102-3.webp",
-        "ar": "الوجه القماشي من زاوية جانبية",
-        "en": "Fabric side viewed from an angle"
-      }
-    ]
-  },
-  {
     "id": "103",
     "cat": "natural",
     "ar": "رول لوف طبيعي",
@@ -71,6 +46,11 @@
         "image": "products/103-3.webp",
         "ar": "الرول من الجانب",
         "en": "Side view of the roll"
+      },
+      {
+        "image": "products/103-4.webp",
+        "ar": "استخدام رول اللوف الطبيعي على كعب القدم",
+        "en": "Using the natural loofah roll on a heel"
       }
     ]
   },
@@ -97,25 +77,20 @@
   {
     "id": "105",
     "cat": "mitts",
-    "ar": "قفاز لوف أصفر بظهر منسوج",
-    "en": "Yellow woven-back loofah mitt",
-    "desc_ar": "قفاز استحمام يجمع بين وجه اللوف الطبيعي والظهر الأصفر المنسوج.",
-    "desc_en": "Bath mitt with a natural loofah face and a yellow woven back.",
+    "ar": "قفاز لوف أصفر قصير بظهر منسوج",
+    "en": "Short yellow woven-back loofah mitt",
+    "desc_ar": "قفاز قصير بوجه من اللوف الطبيعي وظهر أصفر منسوج.",
+    "desc_en": "Short bath mitt with a natural loofah face and a yellow woven back.",
     "photos": [
       {
-        "image": "products/105-1.webp",
-        "ar": "وجه اللوف والظهر الأصفر",
-        "en": "Loofah face and yellow woven back"
+        "image": "products/105-1.webp?v=2",
+        "ar": "وجه اللوف للقفاز الأصفر القصير",
+        "en": "Natural loofah face of the short yellow mitt"
       },
       {
-        "image": "products/105-2.webp",
-        "ar": "تفاصيل الحواف والنسيج الأصفر",
-        "en": "Edging and yellow weave detail"
-      },
-      {
-        "image": "products/105-3.webp",
-        "ar": "الوجهان من زاوية أخرى",
-        "en": "Both sides from another angle"
+        "image": "products/105-2.webp?v=2",
+        "ar": "الظهر الأصفر المنسوج للقفاز القصير",
+        "en": "Yellow woven back of the short mitt"
       }
     ]
   },
@@ -136,6 +111,11 @@
         "image": "products/106-2.webp",
         "ar": "القطع من الجانب",
         "en": "Side view of the pads"
+      },
+      {
+        "image": "products/106-3.webp",
+        "ar": "غسل حلة باللوف المسطّح بجانب الأطباق",
+        "en": "Washing a pot with the flat loofah pad beside the dishes"
       }
     ]
   },
@@ -202,20 +182,20 @@
   {
     "id": "110",
     "cat": "natural",
-    "ar": "لوف أسطواني قصير بحبل أصفر",
-    "en": "Compact loofah cylinder with yellow cord",
-    "desc_ar": "قطعة لوف أسطوانية قصيرة بحبل تعليق أصفر.",
-    "desc_en": "Compact natural loofah cylinder with a yellow hanging cord.",
+    "ar": "لوف أسطواني قصير",
+    "en": "Compact loofah cylinder",
+    "desc_ar": "قطعة لوف طبيعية قصيرة بشكل أسطواني.",
+    "desc_en": "A compact, cylindrical piece of natural loofah.",
     "photos": [
       {
-        "image": "products/110-1.webp",
-        "ar": "جانب اللوف وحبل التعليق",
-        "en": "Side with yellow hanging cord"
+        "image": "products/110-1.webp?v=2",
+        "ar": "جانب اللوف الأسطواني القصير",
+        "en": "Side of the compact loofah cylinder"
       },
       {
-        "image": "products/110-2.webp",
-        "ar": "المقطع الليفي وحلقة التعليق",
-        "en": "Fibre cross-section and hanging loop"
+        "image": "products/110-2.webp?v=2",
+        "ar": "المقطع الليفي للوف الأسطواني القصير",
+        "en": "Fibre cross-section of the compact loofah cylinder"
       }
     ]
   },
@@ -386,6 +366,26 @@
         "image": "products/118-3.webp",
         "ar": "لقطة قريبة للألياف والحبل الأصفر",
         "en": "Close-up of the fibres and yellow cord"
+      }
+    ]
+  },
+  {
+    "id": "119",
+    "cat": "mitts",
+    "ar": "قفاز لوف أصفر بامتداد عند المعصم",
+    "en": "Yellow loofah mitt with an extended cuff",
+    "desc_ar": "قفاز بوجه من اللوف الطبيعي وظهر أصفر منسوج يمتد عند المعصم.",
+    "desc_en": "Bath mitt with a natural loofah face and yellow woven back extending to the wrist.",
+    "photos": [
+      {
+        "image": "products/119-1.webp",
+        "ar": "وجه اللوف مع امتداد القماش الأصفر عند المعصم",
+        "en": "Loofah face and extended yellow cuff"
+      },
+      {
+        "image": "products/119-2.webp",
+        "ar": "الظهر الأصفر المنسوج للقفاز الطويل",
+        "en": "Yellow woven back of the extended-cuff mitt"
       }
     ]
   }
