@@ -41,7 +41,6 @@
   let activeCountry = null;
   let activeModal = null;
   let modalOpener = null;
-  let galleryItems = [];
   let carouselController = null;
   const word = (ar, en) => language === 'ar' ? ar : en;
   function translatedText(element, ar, en) {
@@ -114,68 +113,94 @@
   }));
 
   // Native dialog handles focus trapping and Escape; restore the triggering button.
+  const modalThumbnails = $('.modal-thumbnails', dialog);
   function renderModal() {
+    const { product, items, index } = activeModal;
+    const photo = items[index];
     const image = $('.modal-image', dialog);
     const title = $('#modal-title', dialog);
     const description = $('.modal-description', dialog);
     const kicker = $('.modal-kicker', dialog);
     const enquiry = $('.modal-enquiry', dialog);
-    const gallery = activeModal.type === 'gallery';
-    dialog.classList.toggle('gallery-modal', gallery);
-    enquiry.hidden = gallery;
-    kicker.hidden = gallery;
+    image.src = photo.source;
+    image.alt = word(photo.ar, photo.en);
+    enquiry.hidden = !product;
+    kicker.hidden = !product;
     $$('[data-gallery-prev], [data-gallery-next], [data-gallery-counter]', dialog).forEach(el => {
-      el.hidden = !gallery || galleryItems.length < 2;
+      el.hidden = items.length < 2;
     });
-    if (gallery) {
-      image.src = activeModal.source;
-      image.alt = word(activeModal.ar, activeModal.en);
-      title.textContent = word(activeModal.ar, activeModal.en);
-      description.textContent = word(activeModal.detailAr || 'رحلة اللوف من الزراعة إلى المنتج النهائي.', activeModal.detailEn || 'The loofah journey from field to finished product.');
-      $('[data-gallery-counter]', dialog).textContent = String(galleryItems.findIndex(item => item.source === activeModal.source) + 1) + ' / ' + galleryItems.length;
+    $('[data-gallery-counter]', dialog).textContent = `${index + 1} / ${items.length}`;
+    if (product) {
+      title.textContent = word(product.ar, product.en);
+      description.textContent = word(product.desc_ar, product.desc_en);
+      kicker.textContent = word('كود المنتج ', 'Product code ') + product.id;
+      enquiry.href = 'contact.html?product=' + encodeURIComponent(product.id);
     } else {
-      const p = activeModal.product;
-      image.src = assetsBase + p.image;
-      image.alt = word(p.ar, p.en);
-      title.textContent = word(p.ar, p.en);
-      description.textContent = word(p.detail_ar, p.detail_en);
-      kicker.textContent = word(p.label_ar, p.label_en);
-      enquiry.href = 'contact.html?product=' + encodeURIComponent(p.id);
+      title.textContent = word(photo.ar, photo.en);
+      description.textContent = word(photo.detailAr || 'رحلة اللوف من الزراعة إلى المنتج النهائي.', photo.detailEn || 'The loofah journey from field to finished product.');
     }
+    $$('.modal-thumbnail', modalThumbnails).forEach((button, i) => {
+      button.setAttribute('aria-pressed', String(i === index));
+    });
   }
-  function openModal(data, opener) {
-    activeModal = data;
+  function openModal(items, index, opener, product = null) {
+    if (!items[index] || dialog.open) return;
+    activeModal = { items, index, product };
     modalOpener = opener;
+    dialog.classList.toggle('gallery-modal', !product);
+    dialog.classList.toggle('product-modal', !!product);
+    modalThumbnails.replaceChildren();
+    modalThumbnails.hidden = !product || items.length < 2;
+    if (!modalThumbnails.hidden) {
+      items.forEach((photo, photoIndex) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'modal-thumbnail';
+        button.setAttribute('aria-label', word(`اعرض الصورة ${photoIndex + 1}: ${photo.ar}`, `Show photo ${photoIndex + 1}: ${photo.en}`));
+        const preview = document.createElement('img');
+        preview.src = photo.source;
+        preview.alt = '';
+        preview.decoding = 'async';
+        button.append(preview);
+        button.addEventListener('click', () => {
+          activeModal.index = photoIndex;
+          renderModal();
+        });
+        modalThumbnails.append(button);
+      });
+    }
     renderModal();
     dialog.showModal();
     document.body.style.overflow = 'hidden';
   }
   function closeModal() { dialog.close(); }
   function galleryData(button) {
-    return { type: 'gallery', source: button.dataset.gallerySrc, ar: button.dataset.titleAr, en: button.dataset.titleEn,
+    return { source: button.dataset.gallerySrc, ar: button.dataset.titleAr, en: button.dataset.titleEn,
       detailAr: button.dataset.descriptionAr, detailEn: button.dataset.descriptionEn };
   }
-  function moveGallery(step) {
-    if (activeModal?.type !== 'gallery' || galleryItems.length < 2) return;
-    const current = galleryItems.findIndex(item => item.source === activeModal.source);
-    activeModal = galleryItems[(current + step + galleryItems.length) % galleryItems.length];
+  function moveModal(step) {
+    if (!activeModal || activeModal.items.length < 2) return;
+    const count = activeModal.items.length;
+    activeModal.index = (activeModal.index + step + count) % count;
     renderModal();
   }
-  $('[data-gallery-prev]', dialog).addEventListener('click', () => moveGallery(-1));
-  $('[data-gallery-next]', dialog).addEventListener('click', () => moveGallery(1));
+  $('[data-gallery-prev]', dialog).addEventListener('click', () => moveModal(-1));
+  $('[data-gallery-next]', dialog).addEventListener('click', () => moveModal(1));
   dialog.addEventListener('keydown', event => {
-    if (!['ArrowLeft', 'ArrowRight'].includes(event.key) || activeModal?.type !== 'gallery') return;
+    if (!['ArrowLeft', 'ArrowRight'].includes(event.key) || !activeModal || activeModal.items.length < 2) return;
     event.preventDefault();
     const forward = event.key === (language === 'ar' ? 'ArrowLeft' : 'ArrowRight');
-    moveGallery(forward ? 1 : -1);
+    moveModal(forward ? 1 : -1);
   });
   $$('[data-product]').forEach(button => button.addEventListener('click', () => {
     const product = products.find(p => p.id === button.dataset.product);
-    if (product) openModal({ type: 'product', product }, button);
+    if (!product) return;
+    const items = product.photos.map(photo => ({ ...photo, source: assetsBase + photo.image }));
+    openModal(items, 0, button, product);
   }));
   $$('[data-gallery-src]').forEach(button => button.addEventListener('click', () => {
-    galleryItems = $$('[data-gallery-src]').filter(item => !item.hidden).map(galleryData);
-    openModal(galleryData(button), button);
+    const visible = $$('[data-gallery-src]').filter(item => !item.hidden);
+    openModal(visible.map(galleryData), visible.indexOf(button), button);
   }));
   $('.modal-close', dialog).addEventListener('click', closeModal);
   dialog.addEventListener('click', event => {
@@ -187,17 +212,22 @@
   dialog.addEventListener('close', () => {
     document.body.style.overflow = '';
     activeModal = null;
-    if (modalOpener) modalOpener.focus();
+    modalOpener?.focus({ preventScroll: true });
+    modalOpener = null;
   });
 
   // The form prepares an enquiry. Nothing is stored or silently sent.
   $$('.contact-form').forEach(form => {
     const phone = form.elements.phone;
     const message = form.elements.message;
-    const prefilled = products.find(p => p.id === urlParams.get('product'));
+    const requestedProduct = urlParams.get('product');
+    const prefilled = products.find(p => p.id === requestedProduct);
+    if (requestedProduct) form.elements.subject.value = 'product';
     if (prefilled) {
-      form.elements.subject.value = 'product';
-      message.value = word('أرغب في الاستفسار عن ' + prefilled.ar + '، والمقاسات والكميات المتاحة.', 'I would like to enquire about ' + prefilled.en + ', available sizes and quantities.');
+      message.value = word(
+        `أرغب في الاستفسار عن ${prefilled.ar} (كود ${prefilled.id})، والمقاسات والكميات المتاحة.`,
+        `I would like to enquire about ${prefilled.en} (code ${prefilled.id}), available sizes and quantities.`
+      );
     }
     if (urlParams.get('subject') === 'export') form.elements.subject.value = 'export';
     form.addEventListener('input', event => {
