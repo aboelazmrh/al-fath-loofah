@@ -114,6 +114,7 @@
 
   // Native dialog handles focus trapping and Escape; restore the triggering button.
   const modalThumbnails = $('.modal-thumbnails', dialog);
+  const modalSpecs = $('.modal-specs', dialog);
   function renderModal() {
     const { product, items, index } = activeModal;
     const photo = items[index];
@@ -149,6 +150,12 @@
     modalOpener = opener;
     dialog.classList.toggle('gallery-modal', !product);
     dialog.classList.toggle('product-modal', !!product);
+    if (modalSpecs) {
+      const specs = product && opener.closest('.product')?.querySelector('.product-specs');
+      modalSpecs.replaceChildren();
+      if (specs) modalSpecs.append(specs.cloneNode(true));
+      modalSpecs.hidden = !specs;
+    }
     modalThumbnails.replaceChildren();
     modalThumbnails.hidden = !product || items.length < 2;
     if (!modalThumbnails.hidden) {
@@ -221,7 +228,7 @@
     const phone = form.elements.phone;
     const message = form.elements.message;
     const requestedProduct = urlParams.get('product');
-    const prefilled = products.find(p => p.id === requestedProduct);
+    const prefilled = products.find(p => p.id === requestedProduct || p.previous_codes?.includes(requestedProduct));
     if (requestedProduct) form.elements.subject.value = 'product';
     if (prefilled) {
       message.value = word(

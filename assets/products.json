@@ -2,25 +2,89 @@
   {
     "id": "101",
     "cat": "natural",
-    "ar": "لوف طبيعي بحلقة تعليق",
-    "en": "Natural loofah with a hanging loop",
-    "desc_ar": "قطعة لوف طبيعي بحبل تعليق أصفر مضفور.",
-    "desc_en": "Natural loofah with a braided yellow hanging cord.",
+    "ar": "لوف طبيعي",
+    "en": "Natural loofah",
+    "desc_ar": "قطعة لوف طبيعي.",
+    "desc_en": "A piece of natural loofah.",
     "photos": [
       {
-        "image": "products/101-1.webp",
-        "ar": "واجهة اللوف مع حلقة التعليق",
-        "en": "Front with hanging loop"
+        "image": "products/101-1.webp?v=2",
+        "ar": "واجهة اللوف الطبيعي",
+        "en": "Front view of the natural loofah"
       },
       {
-        "image": "products/101-2.webp",
-        "ar": "زاوية تُظهر المقطع والحبل المضفور",
-        "en": "Angled view of the cut end and braided cord"
+        "image": "products/101-2.webp?v=2",
+        "ar": "المقطع الليفي من زاوية مائلة",
+        "en": "Angled view of the fibrous cut end"
       },
       {
-        "image": "products/101-3.webp",
-        "ar": "الوجه الآخر للوف",
-        "en": "Opposite side of the loofah"
+        "image": "products/101-3.webp?v=2",
+        "ar": "الوجه الآخر للوف الطبيعي",
+        "en": "Opposite side of the natural loofah"
+      },
+      {
+        "image": "products/110-1.webp?v=2",
+        "ar": "اللوف الطبيعي من الجانب",
+        "en": "Side view of the natural loofah"
+      },
+      {
+        "image": "products/110-2.webp?v=2",
+        "ar": "المقطع الليفي للوف الطبيعي",
+        "en": "Fibrous cross-section of the natural loofah"
+      }
+    ],
+    "previous_codes": [
+      "110"
+    ]
+  },
+  {
+    "id": "102",
+    "cat": "mitts",
+    "ar": "لوف كف جوانتي بشكير",
+    "en": "Terry-backed loofah mitt",
+    "desc_ar": "كف استحمام يُلبس في اليد، بوجه من اللوف الطبيعي وظهر من قماش البشكير.",
+    "desc_en": "A bath mitt with a natural loofah face and a terry cloth back.",
+    "photos": [
+      {
+        "image": "products/102-1.webp",
+        "ar": "الوجه المصنوع من اللوف الطبيعي",
+        "en": "Natural loofah face"
+      },
+      {
+        "image": "products/102-2.webp",
+        "ar": "الوجه القماشي البيج",
+        "en": "Beige fabric side"
+      },
+      {
+        "image": "products/102-3.webp",
+        "ar": "الوجه القماشي من زاوية جانبية",
+        "en": "Fabric side viewed from an angle"
+      }
+    ],
+    "size_cm": [
+      16,
+      20
+    ],
+    "colors": [
+      {
+        "ar": "بيج",
+        "en": "Beige"
+      },
+      {
+        "ar": "أصفر",
+        "en": "Yellow"
+      },
+      {
+        "ar": "لبني",
+        "en": "Light blue"
+      },
+      {
+        "ar": "روز",
+        "en": "Pink"
+      },
+      {
+        "ar": "أبيض",
+        "en": "White"
       }
     ]
   },
@@ -57,10 +121,10 @@
   {
     "id": "104",
     "cat": "pads",
-    "ar": "لوف استحمام بحافة زرقاء مقوّسة",
-    "en": "Contoured blue-edged bath pad",
-    "desc_ar": "لوف استحمام بحافة زرقاء مقوّسة وشريط لتثبيت اليد.",
-    "desc_en": "Contoured loofah bath pad with blue edging and a hand strap.",
+    "ar": "لوف قلب كبير بشكير",
+    "en": "Large heart-shaped terry-backed loofah",
+    "desc_ar": "لوف استحمام كبير على شكل قلب، بظهر بشكير وشريط لتثبيت اليد.",
+    "desc_en": "A large heart-shaped bath loofah with a terry cloth back and a hand strap.",
     "photos": [
       {
         "image": "products/104-1.webp",
@@ -72,6 +136,10 @@
         "ar": "الظهر الأزرق وشريط اليد",
         "en": "Blue fabric back and hand strap"
       }
+    ],
+    "size_cm": [
+      18,
+      21
     ]
   },
   {
@@ -142,10 +210,10 @@
   {
     "id": "108",
     "cat": "pads",
-    "ar": "لوف استحمام بيضاوي وردي",
-    "en": "Pink oval loofah bath pad",
-    "desc_ar": "قطعة لوف بيضاوية بحواف وردية وشريط لليد وحلقة تعليق.",
-    "desc_en": "Oval loofah pad with pink edging, a hand strap and a hanging loop.",
+    "ar": "لوف بيضاوي للأطفال",
+    "en": "Oval bath loofah for children",
+    "desc_ar": "لوف استحمام بيضاوي مخصّص للأطفال، بحافة وردية وشريط لتثبيت اليد.",
+    "desc_en": "An oval bath loofah designed for children, with pink edging and a hand strap.",
     "photos": [
       {
         "image": "products/108-1.webp",
@@ -157,15 +225,19 @@
         "ar": "الظهر الوردي وشريط اليد",
         "en": "Pink fabric back and hand strap"
       }
+    ],
+    "size_cm": [
+      13,
+      17
     ]
   },
   {
     "id": "109",
     "cat": "back",
-    "ar": "لوف ظهر أزرق بحبلين",
-    "en": "Blue loofah back scrubber with cords",
-    "desc_ar": "لوف ظهر طولي بحواف زرقاء وحبلين مضفورين.",
-    "desc_en": "Long loofah back scrubber with blue edging and two braided cords.",
+    "ar": "لوف طويل للظهر بشكير",
+    "en": "Long terry-backed loofah back scrubber",
+    "desc_ar": "لوف طويل مخصّص للظهر، بوجه من اللوف الطبيعي وظهر بشكير وحبلين للإمساك.",
+    "desc_en": "A long back scrubber with a natural loofah face, a terry cloth back and two cords to hold.",
     "photos": [
       {
         "image": "products/109-1.webp",
@@ -176,27 +248,17 @@
         "image": "products/109-2.webp",
         "ar": "الظهر القماشي الأزرق",
         "en": "Blue fabric back"
-      }
-    ]
-  },
-  {
-    "id": "110",
-    "cat": "natural",
-    "ar": "لوف أسطواني قصير",
-    "en": "Compact loofah cylinder",
-    "desc_ar": "قطعة لوف طبيعية قصيرة بشكل أسطواني.",
-    "desc_en": "A compact, cylindrical piece of natural loofah.",
-    "photos": [
-      {
-        "image": "products/110-1.webp?v=2",
-        "ar": "جانب اللوف الأسطواني القصير",
-        "en": "Side of the compact loofah cylinder"
       },
       {
-        "image": "products/110-2.webp?v=2",
-        "ar": "المقطع الليفي للوف الأسطواني القصير",
-        "en": "Fibre cross-section of the compact loofah cylinder"
+        "image": "products/109-3.webp",
+        "ar": "الزاوية الجانبية للوف الظهر وظهر البشكير",
+        "en": "Side view of the back scrubber and its terry cloth backing"
       }
+    ],
+    "length_cm": 32,
+    "width_cm": 11,
+    "previous_codes": [
+      "113"
     ]
   },
   {
@@ -222,10 +284,10 @@
   {
     "id": "112",
     "cat": "back",
-    "ar": "لوف ظهر أصفر بحبلين",
-    "en": "Yellow loofah back scrubber with cords",
-    "desc_ar": "لوف ظهر طولي بوجه ليفي وظهر أصفر منسوج وحبلين.",
-    "desc_en": "Long back scrubber with a loofah face, yellow woven back and two cords.",
+    "ar": "لوف طويل حمصي سوري",
+    "en": "Long Syrian-style Homsi loofah",
+    "desc_ar": "لوف طويل من موديل حمصي سوري، بوجه ليفي وظهر أصفر منسوج وحبلين للإمساك.",
+    "desc_en": "A long Syrian-style Homsi loofah with a fibrous face, a woven yellow back and two cords to hold.",
     "photos": [
       {
         "image": "products/112-1.webp",
@@ -237,35 +299,17 @@
         "ar": "الظهر الأصفر المنسوج",
         "en": "Yellow woven back"
       }
-    ]
-  },
-  {
-    "id": "113",
-    "cat": "back",
-    "ar": "لوف ظهر أزرق بحافة مستديرة",
-    "en": "Rounded blue-edged back scrubber",
-    "desc_ar": "قطعة طولية بحافة زرقاء وظهر قماشي. الصور تُظهر التشطيب الجانبي والظهر.",
-    "desc_en": "Long scrubber with blue edging and a fabric back, shown from the side and rear.",
-    "photos": [
-      {
-        "image": "products/113-1.webp",
-        "ar": "الزاوية الجانبية والحافة الزرقاء",
-        "en": "Side profile and blue edging"
-      },
-      {
-        "image": "products/113-2.webp",
-        "ar": "الظهر القماشي المستدير",
-        "en": "Rounded blue fabric back"
-      }
-    ]
+    ],
+    "length_cm": 32,
+    "width_cm": 12
   },
   {
     "id": "114",
     "cat": "mitts",
-    "ar": "قفاز لوف مقوّس بحافة صفراء",
-    "en": "Yellow-edged arch-top loofah mitt",
-    "desc_ar": "قفاز استحمام مقوّس بوجه من اللوف الطبيعي وحواف صفراء مخيطة.",
-    "desc_en": "Arch-top natural loofah mitt with stitched yellow edging.",
+    "ar": "كف لوف حمصي",
+    "en": "Homsi loofah mitt",
+    "desc_ar": "كف استحمام حمصي بوجه من اللوف الطبيعي وحافة صفراء مخيطة.",
+    "desc_en": "A Homsi bath mitt with a natural loofah face and stitched yellow edging.",
     "photos": [
       {
         "image": "products/114-1.webp",
@@ -277,15 +321,19 @@
         "ar": "تفاصيل فتحة اليد والحافة",
         "en": "Open cuff and edging detail"
       }
+    ],
+    "size_cm": [
+      16,
+      20
     ]
   },
   {
     "id": "115",
     "cat": "mitts",
-    "ar": "قفاز لوف بإبهام وحافة زرقاء",
-    "en": "Blue-edged thumb loofah mitt",
-    "desc_ar": "قفاز استحمام بتصميم للإبهام، مع وجه من اللوف وظهر أزرق قماشي.",
-    "desc_en": "Thumb-shaped bath mitt with a loofah face and blue fabric back.",
+    "ar": "لوف كف بإصبع",
+    "en": "Thumb loofah mitt",
+    "desc_ar": "كف استحمام بوجه من اللوف الطبيعي وفتحة للإبهام وظهر قماشي.",
+    "desc_en": "A bath mitt with a natural loofah face, a thumb opening and a fabric back.",
     "photos": [
       {
         "image": "products/115-1.webp",
@@ -297,15 +345,17 @@
         "ar": "الظهر القماشي الأزرق",
         "en": "Blue fabric side"
       }
-    ]
+    ],
+    "length_cm": 21,
+    "width_cm": 18
   },
   {
     "id": "116",
     "cat": "pads",
-    "ar": "لوف استحمام أزرق بمقبض",
-    "en": "Blue loofah paddle scrubber",
-    "desc_ar": "لوف استحمام على شكل مضرب بمقبض وحافة زرقاء.",
-    "desc_en": "Paddle-shaped bath scrubber with a loofah face, handle and blue edging.",
+    "ar": "لوف مضرب بشكير",
+    "en": "Terry-backed loofah paddle",
+    "desc_ar": "لوف استحمام على شكل مضرب، بوجه من اللوف الطبيعي وظهر بشكير ومقبض.",
+    "desc_en": "A paddle-shaped bath scrubber with a natural loofah face, a terry cloth back and a handle.",
     "photos": [
       {
         "image": "products/116-1.webp",
@@ -322,10 +372,10 @@
   {
     "id": "117",
     "cat": "back",
-    "ar": "حزام لوف للظهر بمقبضين",
-    "en": "Beige loofah back-scrubbing belt",
-    "desc_ar": "حزام لوف طويل للظهر بحواف بيج ومقبضين.",
-    "desc_en": "Long loofah back-scrubbing belt with beige edging and two handles.",
+    "ar": "لوف مقبض بشكير",
+    "en": "Terry-backed loofah strap with handles",
+    "desc_ar": "شريط لوف طويل للظهر، بوجه من اللوف الطبيعي وظهر بشكير ومقبضين.",
+    "desc_en": "A long back scrubber with a natural loofah face, a terry cloth back and two handles.",
     "photos": [
       {
         "image": "products/117-1.webp",
@@ -342,15 +392,17 @@
         "ar": "الحزام مطويًا وتفاصيل المقابض",
         "en": "Folded belt and handle detail"
       }
-    ]
+    ],
+    "length_cm": 80,
+    "width_cm": 11
   },
   {
     "id": "118",
     "cat": "natural",
-    "ar": "لوف طبيعي طويل بحلقة تعليق",
-    "en": "Long natural loofah with a hanging loop",
-    "desc_ar": "لوف طبيعي طويل بحبل تعليق أصفر مضفور.",
-    "desc_en": "Long natural loofah with a braided yellow hanging cord.",
+    "ar": "كوز لوف خام",
+    "en": "Whole raw natural loofah",
+    "desc_ar": "كوز كامل من اللوف الطبيعي الخام.",
+    "desc_en": "A whole, raw natural loofah.",
     "photos": [
       {
         "image": "products/118-1.webp",
@@ -367,15 +419,16 @@
         "ar": "لقطة قريبة للألياف والحبل الأصفر",
         "en": "Close-up of the fibres and yellow cord"
       }
-    ]
+    ],
+    "length_cm": 55
   },
   {
     "id": "119",
     "cat": "mitts",
-    "ar": "قفاز لوف أصفر بامتداد عند المعصم",
-    "en": "Yellow loofah mitt with an extended cuff",
-    "desc_ar": "قفاز بوجه من اللوف الطبيعي وظهر أصفر منسوج يمتد عند المعصم.",
-    "desc_en": "Bath mitt with a natural loofah face and yellow woven back extending to the wrist.",
+    "ar": "كف سوري مرايا",
+    "en": "Syrian-style Maraya loofah mitt",
+    "desc_ar": "كف استحمام من موديل سوري مرايا، بوجه من اللوف الطبيعي وظهر أصفر منسوج يمتد عند المعصم.",
+    "desc_en": "A Syrian-style Maraya bath mitt with a natural loofah face and a woven yellow back that extends to the wrist.",
     "photos": [
       {
         "image": "products/119-1.webp",
@@ -387,6 +440,8 @@
         "ar": "الظهر الأصفر المنسوج للقفاز الطويل",
         "en": "Yellow woven back of the extended-cuff mitt"
       }
-    ]
+    ],
+    "length_cm": 25,
+    "width_cm": 16
   }
 ]
