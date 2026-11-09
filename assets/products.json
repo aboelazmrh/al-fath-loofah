@@ -2,91 +2,53 @@
   {
     "id": "101",
     "cat": "natural",
-    "ar": "لوف طبيعي",
-    "en": "Natural loofah",
-    "desc_ar": "قطعة لوف طبيعي.",
-    "desc_en": "A piece of natural loofah.",
+    "ar": "نص كوز لوف خام بحبل",
+    "en": "Half raw loofah with hanging cord",
+    "desc_ar": "نصف كوز من اللوف الطبيعي الخام بطول ١٥ سم، مع حبل للتعليق.",
+    "desc_en": "Half a raw natural loofah, 15 cm long, with a hanging cord.",
     "photos": [
       {
-        "image": "products/101-1.webp?v=2",
-        "ar": "واجهة اللوف الطبيعي",
-        "en": "Front view of the natural loofah"
+        "image": "products/101-1.webp?v=3",
+        "ar": "نص كوز لوف خام بحبل تعليق",
+        "en": "Half raw loofah with hanging cord"
       },
       {
-        "image": "products/101-2.webp?v=2",
+        "image": "products/101-2.webp?v=3",
         "ar": "المقطع الليفي من زاوية مائلة",
         "en": "Angled view of the fibrous cut end"
       },
       {
-        "image": "products/101-3.webp?v=2",
+        "image": "products/101-3.webp?v=3",
         "ar": "الوجه الآخر للوف الطبيعي",
         "en": "Opposite side of the natural loofah"
-      },
-      {
-        "image": "products/110-1.webp?v=2",
-        "ar": "اللوف الطبيعي من الجانب",
-        "en": "Side view of the natural loofah"
-      },
-      {
-        "image": "products/110-2.webp?v=2",
-        "ar": "المقطع الليفي للوف الطبيعي",
-        "en": "Fibrous cross-section of the natural loofah"
       }
     ],
     "previous_codes": [
       "110"
-    ]
+    ],
+    "length_cm": 15
   },
   {
     "id": "102",
     "cat": "mitts",
-    "ar": "لوف كف جوانتي بشكير",
-    "en": "Terry-backed loofah mitt",
-    "desc_ar": "كف استحمام يُلبس في اليد، بوجه من اللوف الطبيعي وظهر من قماش البشكير.",
-    "desc_en": "A bath mitt with a natural loofah face and a terry cloth back.",
+    "ar": "لوف كف دبل طبيعي",
+    "en": "Double-sided natural loofah mitt",
+    "desc_ar": "كف استحمام يُلبس في اليد، بوجهين من اللوف الطبيعي.",
+    "desc_en": "A bath mitt with natural loofah on both sides.",
     "photos": [
       {
         "image": "products/102-1.webp",
-        "ar": "الوجه المصنوع من اللوف الطبيعي",
-        "en": "Natural loofah face"
+        "ar": "الوجه الأمامي من اللوف الطبيعي",
+        "en": "Front natural loofah face"
       },
       {
-        "image": "products/102-2.webp",
-        "ar": "الوجه القماشي البيج",
-        "en": "Beige fabric side"
-      },
-      {
-        "image": "products/102-3.webp",
-        "ar": "الوجه القماشي من زاوية جانبية",
-        "en": "Fabric side viewed from an angle"
+        "image": "products/102-back.webp",
+        "ar": "الوجه الخلفي من اللوف الطبيعي",
+        "en": "Reverse natural loofah face"
       }
     ],
-    "size_cm": [
-      16,
-      20
-    ],
-    "colors": [
-      {
-        "ar": "بيج",
-        "en": "Beige"
-      },
-      {
-        "ar": "أصفر",
-        "en": "Yellow"
-      },
-      {
-        "ar": "لبني",
-        "en": "Light blue"
-      },
-      {
-        "ar": "روز",
-        "en": "Pink"
-      },
-      {
-        "ar": "أبيض",
-        "en": "White"
-      }
-    ]
+    "length_cm": 20,
+    "width_cm": 16
   },
   {
     "id": "103",
@@ -96,6 +58,11 @@
     "desc_ar": "رول لوف طبيعي مناسب لفرك كعب القدمين أثناء الاستحمام.",
     "desc_en": "A natural loofah roll suitable for scrubbing the heels while bathing.",
     "photos": [
+      {
+        "image": "products/103-4.webp",
+        "ar": "استخدام رول اللوف الطبيعي على كعب القدم",
+        "en": "Using the natural loofah roll on a heel"
+      },
       {
         "image": "products/103-1.webp",
         "ar": "الرول في وضع رأسي",
@@ -110,13 +77,9 @@
         "image": "products/103-3.webp",
         "ar": "الرول من الجانب",
         "en": "Side view of the roll"
-      },
-      {
-        "image": "products/103-4.webp",
-        "ar": "استخدام رول اللوف الطبيعي على كعب القدم",
-        "en": "Using the natural loofah roll on a heel"
       }
-    ]
+    ],
+    "length_cm": 7
   },
   {
     "id": "104",
@@ -128,38 +91,92 @@
     "photos": [
       {
         "image": "products/104-1.webp",
-        "ar": "وجه اللوف والحافة الزرقاء",
-        "en": "Loofah face and blue edging"
+        "ar": "وجه اللوف بالحافة اللبني",
+        "en": "Loofah face with light blue edging"
       },
       {
         "image": "products/104-2.webp",
-        "ar": "الظهر الأزرق وشريط اليد",
-        "en": "Blue fabric back and hand strap"
+        "ar": "ظهر البشكير اللبني وشريط اليد",
+        "en": "Light blue terry back and hand strap"
       }
     ],
     "size_cm": [
       18,
       21
+    ],
+    "default_color": "light-blue",
+    "colors": [
+      {
+        "id": "rose",
+        "ar": "روز",
+        "en": "Rose",
+        "hex": "#cf7f87",
+        "image": "products/104-rose.webp",
+        "preview": true
+      },
+      {
+        "id": "beige",
+        "ar": "بيج",
+        "en": "Beige",
+        "hex": "#ddc6a4",
+        "image": "products/104-beige.webp",
+        "preview": true
+      },
+      {
+        "id": "blue",
+        "ar": "أزرق",
+        "en": "Blue",
+        "hex": "#526e9d",
+        "image": "products/104-blue.webp",
+        "preview": true
+      },
+      {
+        "id": "yellow",
+        "ar": "أصفر",
+        "en": "Yellow",
+        "hex": "#e7be40",
+        "image": "products/104-yellow.webp",
+        "preview": true
+      },
+      {
+        "id": "light-blue",
+        "ar": "لبني",
+        "en": "Light blue",
+        "hex": "#bac4cf",
+        "image": "products/104-2.webp",
+        "preview": false
+      }
     ]
   },
   {
     "id": "105",
     "cat": "mitts",
-    "ar": "قفاز لوف أصفر قصير بظهر منسوج",
-    "en": "Short yellow woven-back loofah mitt",
-    "desc_ar": "قفاز قصير بوجه من اللوف الطبيعي وظهر أصفر منسوج.",
-    "desc_en": "Short bath mitt with a natural loofah face and a yellow woven back.",
+    "ar": "لوف كف حمصي",
+    "en": "Homsi loofah mitt",
+    "desc_ar": "كف استحمام بوجه من اللوف الطبيعي وظهر حمصي منسوج، يُلبس في اليد.",
+    "desc_en": "A bath mitt with a natural loofah face and a woven Homsi back.",
     "photos": [
       {
         "image": "products/105-1.webp?v=2",
-        "ar": "وجه اللوف للقفاز الأصفر القصير",
-        "en": "Natural loofah face of the short yellow mitt"
+        "ar": "وجه اللوف لكف الاستحمام الحمصي",
+        "en": "Natural loofah face of the Homsi mitt"
       },
       {
         "image": "products/105-2.webp?v=2",
-        "ar": "الظهر الأصفر المنسوج للقفاز القصير",
-        "en": "Yellow woven back of the short mitt"
+        "ar": "الظهر الحمصي المنسوج",
+        "en": "Woven Homsi back"
       }
+    ],
+    "length_cm": 20,
+    "width_cm": 16,
+    "colors": [
+      {
+        "ar": "حمصي",
+        "en": "Homsi"
+      }
+    ],
+    "previous_codes": [
+      "114"
     ]
   },
   {
@@ -171,6 +188,11 @@
     "desc_en": "Flat natural loofah pads with fabric loops, suitable for washing dishes, pots and other kitchenware.",
     "photos": [
       {
+        "image": "products/106-3.webp",
+        "ar": "غسل حلة باللوف المسطّح بجانب الأطباق",
+        "en": "Washing a pot with the flat loofah pad beside the dishes"
+      },
+      {
         "image": "products/106-1.webp",
         "ar": "سطح اللوف وحلقات التعليق",
         "en": "Loofah surfaces and hanging loops"
@@ -179,41 +201,60 @@
         "image": "products/106-2.webp",
         "ar": "القطع من الجانب",
         "en": "Side view of the pads"
-      },
-      {
-        "image": "products/106-3.webp",
-        "ar": "غسل حلة باللوف المسطّح بجانب الأطباق",
-        "en": "Washing a pot with the flat loofah pad beside the dishes"
       }
     ]
   },
   {
     "id": "107",
     "cat": "mitts",
-    "ar": "قفاز لوف بيج بفتحة لليد",
-    "en": "Beige loofah mitt with an open cuff",
-    "desc_ar": "قفاز بيج بوجه من اللوف الطبيعي وظهر قماشي وفتحة لليد.",
-    "desc_en": "Beige mitt with a loofah face, fabric back and open cuff.",
+    "ar": "لوف كف بشكير",
+    "en": "Terry-backed loofah mitt",
+    "desc_ar": "كف استحمام بوجه من اللوف الطبيعي وظهر بشكير، مع فتحة لإدخال اليد.",
+    "desc_en": "A bath mitt with a natural loofah face, a terry cloth back and an opening for the hand.",
     "photos": [
       {
-        "image": "products/107-1.webp",
-        "ar": "الوجه الليفي والوجه القماشي",
-        "en": "Loofah face and fabric side"
+        "image": "products/107-rose.webp",
+        "ar": "لوف كف بشكير باللون الروز",
+        "en": "Terry-backed loofah mitt in rose"
+      }
+    ],
+    "length_cm": 20,
+    "width_cm": 16,
+    "default_color": "rose",
+    "colors": [
+      {
+        "id": "rose",
+        "ar": "روز",
+        "en": "Rose",
+        "hex": "#cf7f87",
+        "image": "products/107-rose.webp",
+        "preview": true
       },
       {
-        "image": "products/107-2.webp",
-        "ar": "لقطة قريبة لفتحة اليد",
-        "en": "Close-up of the open cuff"
+        "id": "brown",
+        "ar": "بني",
+        "en": "Brown",
+        "hex": "#a48660",
+        "image": "products/107-brown.webp",
+        "preview": true
+      },
+      {
+        "id": "yellow",
+        "ar": "أصفر",
+        "en": "Yellow",
+        "hex": "#e7be40",
+        "image": "products/107-yellow.webp",
+        "preview": true
       }
     ]
   },
   {
     "id": "108",
     "cat": "pads",
-    "ar": "لوف بيضاوي للأطفال",
-    "en": "Oval bath loofah for children",
-    "desc_ar": "لوف استحمام بيضاوي مخصّص للأطفال، بحافة وردية وشريط لتثبيت اليد.",
-    "desc_en": "An oval bath loofah designed for children, with pink edging and a hand strap.",
+    "ar": "لوف بيضاوي بشكير",
+    "en": "Oval terry-backed bath loofah",
+    "desc_ar": "لوف استحمام بيضاوي مناسب للأطفال، بوجه من اللوف الطبيعي وظهر بشكير وشريط لتثبيت اليد.",
+    "desc_en": "An oval bath loofah for children, with a natural loofah face, a terry cloth back and a hand strap.",
     "photos": [
       {
         "image": "products/108-1.webp",
@@ -226,9 +267,50 @@
         "en": "Pink fabric back and hand strap"
       }
     ],
-    "size_cm": [
-      13,
-      17
+    "length_cm": 17,
+    "width_cm": 13,
+    "default_color": "rose",
+    "colors": [
+      {
+        "id": "rose",
+        "ar": "روز",
+        "en": "Rose",
+        "hex": "#cf7f87",
+        "image": "products/108-2.webp",
+        "preview": false
+      },
+      {
+        "id": "beige",
+        "ar": "بيج",
+        "en": "Beige",
+        "hex": "#ddc6a4",
+        "image": "products/108-beige.webp",
+        "preview": true
+      },
+      {
+        "id": "blue",
+        "ar": "أزرق",
+        "en": "Blue",
+        "hex": "#526e9d",
+        "image": "products/108-blue.webp",
+        "preview": true
+      },
+      {
+        "id": "yellow",
+        "ar": "أصفر",
+        "en": "Yellow",
+        "hex": "#e7be40",
+        "image": "products/108-yellow.webp",
+        "preview": true
+      },
+      {
+        "id": "light-blue",
+        "ar": "لبني",
+        "en": "Light blue",
+        "hex": "#bac4cf",
+        "image": "products/108-light-blue.webp",
+        "preview": true
+      }
     ]
   },
   {
@@ -262,12 +344,12 @@
     ]
   },
   {
-    "id": "111",
+    "id": "110",
     "cat": "pads",
-    "ar": "لوف استحمام بيضاوي أصفر",
-    "en": "Yellow oval loofah bath pad",
-    "desc_ar": "قطعة لوف بيضاوية بحواف صفراء وظهر منسوج مع شريط لليد.",
-    "desc_en": "Oval loofah pad with yellow edging, a woven back and a hand strap.",
+    "ar": "لوف استحمام بيضاوي حمصي",
+    "en": "Homsi oval bath loofah",
+    "desc_ar": "لوف استحمام بيضاوي بوجه من اللوف الطبيعي وظهر حمصي منسوج مع شريط لليد وحلقة للتعليق.",
+    "desc_en": "An oval bath pad with a natural loofah face, a woven Homsi back, a hand strap and a hanging loop.",
     "photos": [
       {
         "image": "products/111-1.webp",
@@ -279,10 +361,15 @@
         "ar": "الظهر الأصفر وشريط اليد",
         "en": "Yellow woven back and hand strap"
       }
+    ],
+    "length_cm": 17,
+    "width_cm": 15,
+    "previous_codes": [
+      "111"
     ]
   },
   {
-    "id": "112",
+    "id": "111",
     "cat": "back",
     "ar": "لوف طويل حمصي سوري",
     "en": "Long Syrian-style Homsi loofah",
@@ -301,34 +388,13 @@
       }
     ],
     "length_cm": 32,
-    "width_cm": 12
-  },
-  {
-    "id": "114",
-    "cat": "mitts",
-    "ar": "كف لوف حمصي",
-    "en": "Homsi loofah mitt",
-    "desc_ar": "كف استحمام حمصي بوجه من اللوف الطبيعي وحافة صفراء مخيطة.",
-    "desc_en": "A Homsi bath mitt with a natural loofah face and stitched yellow edging.",
-    "photos": [
-      {
-        "image": "products/114-1.webp",
-        "ar": "وجه اللوف والحافة الصفراء",
-        "en": "Loofah face and yellow edging"
-      },
-      {
-        "image": "products/114-2.webp",
-        "ar": "تفاصيل فتحة اليد والحافة",
-        "en": "Open cuff and edging detail"
-      }
-    ],
-    "size_cm": [
-      16,
-      20
+    "width_cm": 12,
+    "previous_codes": [
+      "112"
     ]
   },
   {
-    "id": "115",
+    "id": "112",
     "cat": "mitts",
     "ar": "لوف كف بإصبع",
     "en": "Thumb loofah mitt",
@@ -347,10 +413,13 @@
       }
     ],
     "length_cm": 21,
-    "width_cm": 18
+    "width_cm": 18,
+    "previous_codes": [
+      "115"
+    ]
   },
   {
-    "id": "116",
+    "id": "113",
     "cat": "pads",
     "ar": "لوف مضرب بشكير",
     "en": "Terry-backed loofah paddle",
@@ -367,10 +436,13 @@
         "ar": "الوجه القماشي الخلفي",
         "en": "Fabric back of the paddle"
       }
+    ],
+    "previous_codes": [
+      "116"
     ]
   },
   {
-    "id": "117",
+    "id": "114",
     "cat": "back",
     "ar": "لوف مقبض بشكير",
     "en": "Terry-backed loofah strap with handles",
@@ -394,10 +466,13 @@
       }
     ],
     "length_cm": 80,
-    "width_cm": 11
+    "width_cm": 11,
+    "previous_codes": [
+      "117"
+    ]
   },
   {
-    "id": "118",
+    "id": "115",
     "cat": "natural",
     "ar": "كوز لوف خام",
     "en": "Whole raw natural loofah",
@@ -405,43 +480,49 @@
     "desc_en": "A whole, raw natural loofah.",
     "photos": [
       {
-        "image": "products/118-1.webp",
-        "ar": "اللوف الطويل من الأمام",
-        "en": "Front view of the long loofah"
+        "image": "products/118-1-uncorded.webp",
+        "ar": "الكوز الكامل من الأمام",
+        "en": "Front view of the whole loofah"
       },
       {
-        "image": "products/118-2.webp",
-        "ar": "اللوف من الجانب وحبل التعليق",
-        "en": "Side view with the hanging cord"
+        "image": "products/118-2-uncorded.webp",
+        "ar": "الكوز الكامل من الجانب",
+        "en": "Side view of the whole loofah"
       },
       {
-        "image": "products/118-3.webp",
-        "ar": "لقطة قريبة للألياف والحبل الأصفر",
-        "en": "Close-up of the fibres and yellow cord"
+        "image": "products/118-3-uncorded.webp",
+        "ar": "لقطة قريبة لألياف اللوف الطبيعي",
+        "en": "Close-up of the natural loofah fibres"
       }
     ],
-    "length_cm": 55
+    "length_cm": 55,
+    "previous_codes": [
+      "118"
+    ]
   },
   {
-    "id": "119",
+    "id": "116",
     "cat": "mitts",
-    "ar": "كف سوري مرايا",
-    "en": "Syrian-style Maraya loofah mitt",
-    "desc_ar": "كف استحمام من موديل سوري مرايا، بوجه من اللوف الطبيعي وظهر أصفر منسوج يمتد عند المعصم.",
-    "desc_en": "A Syrian-style Maraya bath mitt with a natural loofah face and a woven yellow back that extends to the wrist.",
+    "ar": "كف سوري بلسان",
+    "en": "Syrian loofah mitt with extended cuff",
+    "desc_ar": "كف استحمام سوري بلسان عند المعصم، بوجه من اللوف الطبيعي ووجه حمصي منسوج.",
+    "desc_en": "A Syrian bath mitt with an extended cuff, a natural loofah face and a woven Homsi face.",
     "photos": [
       {
         "image": "products/119-1.webp",
-        "ar": "وجه اللوف مع امتداد القماش الأصفر عند المعصم",
-        "en": "Loofah face and extended yellow cuff"
+        "ar": "وجه اللوف الطبيعي واللسان عند المعصم",
+        "en": "Natural loofah face and extended cuff"
       },
       {
         "image": "products/119-2.webp",
-        "ar": "الظهر الأصفر المنسوج للقفاز الطويل",
-        "en": "Yellow woven back of the extended-cuff mitt"
+        "ar": "الوجه الحمصي المنسوج",
+        "en": "Woven Homsi face"
       }
     ],
     "length_cm": 25,
-    "width_cm": 16
+    "width_cm": 16,
+    "previous_codes": [
+      "119"
+    ]
   }
 ]

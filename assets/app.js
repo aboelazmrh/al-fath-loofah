@@ -115,8 +115,33 @@
   // Native dialog handles focus trapping and Escape; restore the triggering button.
   const modalThumbnails = $('.modal-thumbnails', dialog);
   const modalSpecs = $('.modal-specs', dialog);
+  function productColor(product, id) {
+    return id && product.colors?.find(color => color.id === id);
+  }
+  function productItems(product, color) {
+    let photos = product.photos;
+    if (color) {
+      const original = photos.find(photo => photo.image === color.image);
+      photos = original ? [original, ...photos.filter(photo => photo !== original)] : [{
+        image: color.image, ar: product.ar + '، ' + color.ar, en: product.en + ', ' + color.en
+      }];
+    }
+    return photos.map(photo => ({ ...photo, source: assetsBase + photo.image }));
+  }
+  function enquiryHref(product, color) {
+    const params = new URLSearchParams({ product: product.id, catalog: '2' });
+    if (color) params.set('color', color.id);
+    return 'contact.html?' + params;
+  }
+  function renderSwatches(root, color) {
+    $$('[data-product-color]', root).forEach(button => {
+      button.setAttribute('aria-pressed', String(button.dataset.productColor === color.id));
+    });
+    const preview = color.preview ? word(' · معاينة اللون', ' · Colour preview') : '';
+    $('[data-color-name]', root).textContent = word(color.ar, color.en) + preview;
+  }
   function renderModal() {
-    const { product, items, index } = activeModal;
+    const { product, items, index, color } = activeModal;
     const photo = items[index];
     const image = $('.modal-image', dialog);
     const title = $('#modal-title', dialog);
@@ -135,7 +160,7 @@
       title.textContent = word(product.ar, product.en);
       description.textContent = word(product.desc_ar, product.desc_en);
       kicker.textContent = word('كود المنتج ', 'Product code ') + product.id;
-      enquiry.href = 'contact.html?product=' + encodeURIComponent(product.id);
+      enquiry.href = enquiryHref(product, color);
     } else {
       title.textContent = word(photo.ar, photo.en);
       description.textContent = word(photo.detailAr || 'رحلة اللوف من الزراعة إلى المنتج النهائي.', photo.detailEn || 'The loofah journey from field to finished product.');
@@ -144,18 +169,8 @@
       button.setAttribute('aria-pressed', String(i === index));
     });
   }
-  function openModal(items, index, opener, product = null) {
-    if (!items[index] || dialog.open) return;
-    activeModal = { items, index, product };
-    modalOpener = opener;
-    dialog.classList.toggle('gallery-modal', !product);
-    dialog.classList.toggle('product-modal', !!product);
-    if (modalSpecs) {
-      const specs = product && opener.closest('.product')?.querySelector('.product-specs');
-      modalSpecs.replaceChildren();
-      if (specs) modalSpecs.append(specs.cloneNode(true));
-      modalSpecs.hidden = !specs;
-    }
+  function renderModalThumbnails() {
+    const { items, product } = activeModal;
     modalThumbnails.replaceChildren();
     modalThumbnails.hidden = !product || items.length < 2;
     if (!modalThumbnails.hidden) {
@@ -176,6 +191,20 @@
         modalThumbnails.append(button);
       });
     }
+  }
+  function openModal(items, index, opener, product = null, color = null) {
+    if (!items[index] || dialog.open) return;
+    activeModal = { items, index, product, color };
+    modalOpener = opener;
+    dialog.classList.toggle('gallery-modal', !product);
+    dialog.classList.toggle('product-modal', !!product);
+    if (modalSpecs) {
+      const specs = product && opener.closest('.product')?.querySelector('.product-specs');
+      modalSpecs.replaceChildren();
+      if (specs) modalSpecs.append(specs.cloneNode(true));
+      modalSpecs.hidden = !specs;
+    }
+    renderModalThumbnails();
     renderModal();
     dialog.showModal();
     document.body.style.overflow = 'hidden';
@@ -202,9 +231,33 @@
   $$('[data-product]').forEach(button => button.addEventListener('click', () => {
     const product = products.find(p => p.id === button.dataset.product);
     if (!product) return;
-    const items = product.photos.map(photo => ({ ...photo, source: assetsBase + photo.image }));
-    openModal(items, 0, button, product);
+    const selected = productColor(product, button.closest('.product').dataset.selectedColor);
+    const color = selected || productColor(product, product.default_color);
+    openModal(productItems(product, selected), 0, button, product, color);
   }));
+  document.addEventListener('click', event => {
+    const swatch = event.target.closest('[data-product-color]');
+    if (!swatch) return;
+    const inModal = dialog.contains(swatch);
+    const card = (inModal ? modalOpener : swatch)?.closest('.product');
+    if (!card) return;
+    const cover = $('[data-product]', card);
+    const product = products.find(p => p.id === cover.dataset.product);
+    const color = productColor(product, swatch.dataset.productColor);
+    const items = productItems(product, color);
+    const image = $('img', cover);
+    card.dataset.selectedColor = color.id;
+    image.src = items[0].source;
+    image.alt = word(items[0].ar, items[0].en);
+    $('[data-product-enquiry]', card).href = enquiryHref(product, color);
+    renderSwatches(card, color);
+    if (inModal) {
+      Object.assign(activeModal, { items, index: 0, color });
+      renderSwatches(modalSpecs, color);
+      renderModalThumbnails();
+      renderModal();
+    }
+  });
   $$('[data-gallery-src]').forEach(button => button.addEventListener('click', () => {
     const visible = $$('[data-gallery-src]').filter(item => !item.hidden);
     openModal(visible.map(galleryData), visible.indexOf(button), button);
@@ -228,12 +281,18 @@
     const phone = form.elements.phone;
     const message = form.elements.message;
     const requestedProduct = urlParams.get('product');
-    const prefilled = products.find(p => p.id === requestedProduct || p.previous_codes?.includes(requestedProduct));
+    const current = products.find(p => p.id === requestedProduct);
+    const previous = urlParams.get('catalog') !== '2' &&
+      products.find(p => p.previous_codes?.includes(requestedProduct));
+    const prefilled = previous || current;
     if (requestedProduct) form.elements.subject.value = 'product';
     if (prefilled) {
+      const color = productColor(prefilled, urlParams.get('color'));
+      const colorAr = color ? '، اللون ' + color.ar : '';
+      const colorEn = color ? ', colour ' + color.en : '';
       message.value = word(
-        `أرغب في الاستفسار عن ${prefilled.ar} (كود ${prefilled.id})، والمقاسات والكميات المتاحة.`,
-        `I would like to enquire about ${prefilled.en} (code ${prefilled.id}), available sizes and quantities.`
+        `أرغب في الاستفسار عن ${prefilled.ar} (كود ${prefilled.id}${colorAr})، والمقاسات والكميات المتاحة.`,
+        `I would like to enquire about ${prefilled.en} (code ${prefilled.id}${colorEn}), available sizes and quantities.`
       );
     }
     if (urlParams.get('subject') === 'export') form.elements.subject.value = 'export';
