@@ -137,8 +137,7 @@
     $$('[data-product-color]', root).forEach(button => {
       button.setAttribute('aria-pressed', String(button.dataset.productColor === color.id));
     });
-    const preview = color.preview ? word(' · معاينة اللون', ' · Colour preview') : '';
-    $('[data-color-name]', root).textContent = word(color.ar, color.en) + preview;
+    $('[data-color-name]', root).textContent = word(color.ar, color.en);
   }
   function renderModal() {
     const { product, items, index, color } = activeModal;
