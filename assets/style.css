@@ -223,10 +223,16 @@ h1{line-height:1.45}h2{line-height:1.5}h3{line-height:1.6;font-weight:700}
 
 /* Product cards and photo viewer */
 .product-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.featured-actions {
+  margin-block-start: 24px;
+  text-align: center;
+}
+.featured-actions .small-note {
+  margin-inline: auto;
 }
 .catalog-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
   max-width: 1080px;
   margin-inline: auto;
   gap: 24px;
